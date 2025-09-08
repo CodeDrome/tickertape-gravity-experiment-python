@@ -50,7 +50,7 @@ def calc_data(acceleration: float, interval: float, iterations: int) -> Dict:
     a = acceleration
     u = 0
 
-    t = np.arange(0,17,1)
+    t = np.arange(0,iterations+1,interval)
 
     v = u + (a * t)
 
@@ -87,7 +87,7 @@ def display_tickertape(data: Dict) -> None:
     tickertape showing times and displacements.
     """
 
-    y = np.zeros(17)
+    y = np.zeros(len(data["times"]))
 
     fig, ax = plt.subplots(figsize=(16,2))
 
